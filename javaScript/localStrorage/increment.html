@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="name">
+        <input type="text" id="email">
+        <input type="text" id="num">
+        <input type="submit">
+    </form>
+</body>
+</html>
+<script>
+
+let form = document.querySelector("form"); 
+
+form.addEventListener("click", myfun);
+ function myfun(){
+    event.preventDefault(); 
+    var obj = {
+        name : form.name.value,
+        email : form.email.value,
+        num: form.num.value,
+    }
+
+
+    localStorage.setItem("dataSet", JSON.stringify(obj))
+ }
+
+let lsData = JSON.parse(localStorage.getItem("dataSet")); 
+console.log(lsData)
+
+</script>

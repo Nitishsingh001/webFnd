@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            
+            width: 50%;
+            margin:auto;
+            background-color: rgb(226, 230, 230);
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+  <form>
+
+      <input type="text" id="name" placeholder="enter your name">
+      <input type="email" id="email" placeholder="enter your email">
+      <input type="number" id="num" placeholder="enter your numver">
+      <input type="number" id="paise" placeholder="account balance">
+      <input type="submit">
+
+
+
+
+  </form>
+
+
+</body>
+</html>
+
+<script>
+
+let form = document.querySelector("form").addEventListener("submit",myfun); 
+
+var total =0; 
+let arr = []; 
+function myfun(){
+    event.preventDefault();
+
+    var myobj= {
+        name : document.querySelector("#name").value,
+        email: document.querySelector("#email").value,
+        num: document.querySelector("#num").value,
+        paise: document.querySelector("#paise").value
+    }
+    arr.push(myobj);
+    console.log(arr); 
+    total = total + parseInt(myobj.paise); 
+    console.log(total);
+    showData(arr); 
+}
+
+
+
+function showData()
+</script>
+
+<!-- 
+Add Products in Inventory
+Product Name
+ 
+Product Catagory
+ 
+Brand
+ 
+Product Price
+ 
+Delivered By
+ 
+Total Price:- 0
+Product Name	Catagory	Brand	Price	Delivered By	Price Segment	Delete -->

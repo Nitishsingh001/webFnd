@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cont{
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            text-align: center;
+gap: 30px;
+        }
+        #cont>div{
+            
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="cont">
+
+    </div>
+</body>
+</html>
+<script>
+ 
+ let cont = document.querySelector("#cont");
+
+ fetch("https://jsonplaceholder.typicode.com/postshttps://jsonplaceholder.typicode.com/posts")
+  .then((response) =>{
+    return response.json(); 
+  }) 
+
+   .then((actualData) =>{
+    console.log(actualData); 
+    actualData.forEach(element => {
+        displayData(element); 
+    });
+   })
+
+//    "userId": 3,
+//         "id": 28,
+//         "title": "delectus ullam et corporis nulla voluptas sequi",
+
+ function displayData(data){
+ 
+    let div = document.createElement("div"); 
+    div.setAttribute("class","card"); 
+   let id = document.createElement("h1"); 
+   id.innerText = data.id; 
+   let userId = document.createElement("p"); 
+   userId.innerText = data.userId; 
+
+   let title = document.createElement("h5"); 
+   title.innerText = data.title; 
+   
+    div.append(id,userId,title); 
+
+    cont.append(div); 
+
+
+
+ }
+
+
+</script>

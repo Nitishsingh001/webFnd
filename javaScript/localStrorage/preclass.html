@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="name">
+        <input type="email" id="email">
+        <input type="password" id="password">
+        <input type="submit">
+    </form>
+    <table>
+        <th>
+            <tr>name</tr>
+            <tr>email</tr>
+            <tr>password</tr>
+        </th>
+        <tbody>
+          
+        </tbody>
+    </table>
+</body>
+</html>
+
+<script>
+    var dataArr= []; 
+let form = document.querySelector("form").addEventListener("submit", myfun); 
+function myfun(){
+    event.preventDefault(); 
+    var dataObj= {
+        name: document.querySelector("#name").value,
+        email : document.querySelector("#email").value,
+        password : document.querySelector("#password").value
+    }
+    dataArr.push(dataObj)
+    console.log(dataArr); 
+    showData(dataArr)
+}
+
+function showData(dataArr){
+document.querySelector("tbody").innerHTML = ""; 
+
+dataArr.map(function(elem){
+    var tr = document.createElement("tr"); 
+
+var td1 = document.createElement("td")
+td1.innerText = elem.name; 
+
+var td2 = document.createElement("td"); 
+td2.innerText = elem.email; 
+
+var td3 = document.createElement("td"); 
+td3.innerText= elem.password; 
+
+var td4 = document.createElement("td"); 
+td4.innerText = "Delete"; 
+
+
+  td4.addEventListener("click", deleteEle); 
+
+  function deleteEle(){
+    event.target.parentNode.remove();
+        
+  }
+
+
+
+tr.append(td1,td2,td3, td4); 
+document.querySelector("tbody").append(tr); 
+
+})
+
+
+
+}
+</script>
