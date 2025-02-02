@@ -13,33 +13,33 @@
 <script>
 // write a function 
 // that returns a promise
-//takes a nuber
+// takes a nuber
 
 // the promise will be fulfilled after 5 seconds 
 // if a -ve number is given
-//the promise will reject with the following string 
-//"cannot squrt a negative number "
-//
+// the promise will reject with the following string 
+// "cannot squrt a negative number "
+
 
 // if Zero or a positive number is provided
 // then the promise resolves with the real 
-//square root 
+// square root 
 
 
 
 
-// function squrtPromist(n){
-//     return new Promise((resolve,reject)=>{
-//         setTimeout(()=>{
-//             if(n<0){
-//                 reject("cannot squrt a negative number")
-//             }else{
-//                 resolve(Math.sqrt(n))
-//             }
-//         }, 1000)
-//     })
-// }
-// squrtPromist(1)
+function squrtPromist(n){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            if(n<0){
+                reject("cannot squrt a negative number")
+            }else{
+                resolve(Math.sqrt(n))
+            }
+        }, 1000)
+    })
+}
+squrtPromist(1)
 
 function sqrtnum(n){
     return new Promise((resolve,reject)=>{
@@ -47,4 +47,33 @@ function sqrtnum(n){
     })
 }
 console.log(sqrtnum(9))
+
+
+
+
+
+
+
+
+function squrtPromist(n){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            if(n<0){
+                reject("cannot squrt a negative number")
+            }else{
+                resolve(Math.sqrt(n))
+            }
+        }, 1000)
+    })
+}
+squrtPromist(1)
+
+function sqrtnum(n){
+    return new Promise((resolve,reject)=>{
+        resolve(Math.sqrt(n))
+    })
+}
+console.log(sqrtnum(9))
+
+
 </script>
